@@ -1,8 +1,9 @@
 import asyncio
-from app.astro_wave import setup
+from app.astro_wave import AstroWave
 
 async def main():
-   await setup()
+   app = AstroWave()
+   app.run()
 
 if __name__ == "__main__":
   asyncio.run(main())
