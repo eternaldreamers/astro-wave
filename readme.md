@@ -1,14 +1,17 @@
-<center> 
-<h1><img src="images/logo-text.png" width="500px" /></h1>
-
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.11-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/Status-It's%20Complicated-yellow.svg" alt="Estado del Proyecto">
-  <img src="https://img.shields.io/badge/Código%20Level%3F-1000!!!-green.svg" alt="Nivel de Código">
+    <img src="images/logo-text.png" width="500px" />
 </p>
 
-<img src="images/banner.png" />
-</center>
+<p align="center">
+    <img src="https://img.shields.io/badge/python-3.11-blue.svg" alt="Python Version">
+    <img src="https://img.shields.io/badge/Status-It's%20Complicated-yellow.svg" alt="Estado del Proyecto">
+    <img src="https://img.shields.io/badge/Código%20Level%3F-1000!!!-green.svg" alt="Nivel de Código">
+</p>
+
+<p align="center">
+    <img src="images/banner.png" />
+</p>
+
 <br>
 
 # About Astro Wave
@@ -84,4 +87,3 @@ python main.py
 ```
 python dev.py
 ```
-
