@@ -1,1 +1,4 @@
 watchdog==3.0.0
+click==8.1.7
+pygame==2.5.2
+pyee==11.0.0

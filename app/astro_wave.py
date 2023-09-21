@@ -1,4 +1,7 @@
 class AstroWave:
+    def __init__(self) -> None:
+        pass
+
     def run(self):
-        print("hello world!")
+        print("run AstroWave")
 
