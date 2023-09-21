@@ -1,6 +1,6 @@
 import asyncio
 import click
-from app.modules import GUIModule, HiperEspectralModule
+from app.modules import GUIModule, HSIModule
 from app.astro_wave import AstroWave
 
 @click.group()
@@ -16,8 +16,8 @@ def start():
    AstroWave().run()
 
 @main.command()
-def hiperespectral():
-   HiperEspectralModule().run()
+def hsi():
+   HSIModule().run()
 
 @main.command()
 def gui():
