@@ -79,7 +79,7 @@ pip install -r requirements.txt
 **Run Default**
 
 ```
-python main.py
+python main.py <start|gui|hiperespectral>
 ```
 
 **Run Development**
