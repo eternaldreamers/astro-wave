@@ -32,7 +32,7 @@ def get_sound(sound_id):
 @sound_blueprint.route("/<sound_id>", methods=["PUT"])
 def update_sound(sound_id):
     updates = request.json
-    u(updates)
+    u(sound_id, updates)
     return jsonify({"message": "sound updated successfully"}), 200
 
 @sound_blueprint.route("/<sound_id>", methods=["DELETE"])

@@ -33,7 +33,7 @@ def get_music(music_id):
 @music_blueprint.route("/<music_id>", methods=["PUT"])
 def update_music(music_id):
     updates = request.json
-    u(updates)
+    u(music_id, updates)
     return jsonify({"message": "music updated successfully"}), 200
 
 @music_blueprint.route("/<music_id>", methods=["DELETE"])

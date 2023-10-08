@@ -32,7 +32,7 @@ def get_data(data_id):
 @data_blueprint.route("/<data_id>", methods=["PUT"])
 def update_data(data_id):
     updates = request.json
-    u(updates)
+    u(data_id, updates)
     return jsonify({"message": "data updated successfully"}), 200
 
 @data_blueprint.route("/<data_id>", methods=["DELETE"])

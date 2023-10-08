@@ -1,5 +1,6 @@
 moon ={
-      "data_property": "moons",
+    "data_property": "moons",
+    "tiempo": 500,
     "chord_progression": ["Cmaj7", "Am7", "Dm7", "G7"],
     "duration": 1,
     "octave": 4,

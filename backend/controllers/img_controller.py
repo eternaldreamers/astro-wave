@@ -28,3 +28,14 @@ def get_img(img_id):
         return dumps(img)
     else:
         return jsonify({"message": "Img not found"}), 404
+
+@img_blueprint.route("/<img_id>", methods=["PUT"])
+def update_img(img_id):
+    updates = request.json
+    u(img_id, updates)
+    return jsonify({"message": "img updated successfully"}), 200
+
+@img_blueprint.route("/<img_id>", methods=["DELETE"])
+def delete_img(img_id):
+    d(img_id)
+    return jsonify({"message": "img deleted successfully"}), 200
