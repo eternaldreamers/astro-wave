@@ -1,8 +1,5 @@
 import openai
-import re
 from typing import List
-import datetime
-from database import get_patient_prescriptions_and_details, create_reminder
 
 class Openia:
     def __init__(self, api_key: str, eccentric: bool = True):
@@ -27,3 +24,40 @@ class Openia:
         )
         options = [choice.text.strip() for choice in response.choices]
         return options
+    
+    def teach(self, message: str) -> str:
+        """
+        Generate a response based on the given message, teaching.
+        """
+        responses = self._generate_text(prompt=message, num_options=1, temperature=self.temperature)
+        return responses[0] if responses else ""
+    
+    def interpret_differences(self, differences):
+        explanations = {
+            "moons": "number of moons",
+            "gravity": "force of gravity",
+            "temperature": "average temperature",
+            "rings": "presence of rings",
+            "water": "amount of water",
+            "craters": "number of craters",
+            "radiation": "level of radiation",
+            "density": "density",
+            "size": "size",
+            "volcanoes": "number of volcanoes",
+            "auroras": "number of auroras"
+        }
+
+        interpretation = "The answer you chose is incorrect because, "
+
+        for key, (correct_val, incorrect_val) in differences.items():
+            if key in explanations:
+                if isinstance(correct_val, (int, float)) and isinstance(incorrect_val, (int, float)):
+                    if correct_val > incorrect_val:
+                        interpretation += f"the {explanations[key]} is higher, "
+                    else:
+                        interpretation += f"the {explanations[key]} is lower, "
+                else:
+                    interpretation += f"the {explanations[key]} is different, "
+
+        interpretation = interpretation.rstrip(", ") + "."
+        return interpretation

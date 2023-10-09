@@ -111,3 +111,23 @@ def compare_answers(music_id, image_id):
         return True
     else:
         return False #cambiar a lo que alberto quiere
+
+
+def save_sounds_from_mp3_folder():
+    folder_path = "mp3/"
+
+    files = os.listdir(folder_path)
+
+    mp3_files = [f for f in files if f.endswith('.mp3')]
+
+    for mp3_file in mp3_files:
+        data_property = mp3_file[:-4]
+
+        sound_data = {
+            "data_property": data_property,
+            "file_path": os.path.join(folder_path, mp3_file)
+        }
+
+        sound_collection.insert_one(sound_data)
+
+    print(f"{len(mp3_files)} sounds saved to the database.")
